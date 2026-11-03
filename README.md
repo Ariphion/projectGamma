@@ -87,10 +87,8 @@ flowchart LR
 
 ### Successful Pipeline Run
 
-![GitHub Actions pipeline with Build, Test and Deploy jobs](project_screenshots/githubActions.png)
+![GitHub Actions pipeline with Build, Test and Deploy jobs](project_screenshots/runningResultCICD.png)
 *All three jobs (Build, Test, Deploy) completed successfully.*
-
-![Pipeline job details](project_screenshots/runningResultCICD.png)
 *Detailed view of a pipeline run in GitHub Actions.*
 
 ## 4. Unit Testing
