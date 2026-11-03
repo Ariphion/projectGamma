@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GammaTech | Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/GammaTechLogo.png">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="/">
+                    <img class="companyLogo" src="assets/GammaTechLogo.png" alt="">GammaTech</a>
+            </h1>
+            <nav class= "main-nav" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+            </nav>
+            <nav class="user-actions-nav" aria-label="User Actions">
+                <ul>
+                    <li><a class="icons" href="login.html"><img class="icons login" src="assets/avatar.png" alt="Login"></a></li>
+                    <li><a class="icons active" href="contact.html"><img class="icons contact" src="assets/contact-us.png" alt="Contact"></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>Contact Us</h2>
+        <form action="#" method="POST" class="contact-form">
+            <label for="name">Full Name *:</label>
+            <input type="text" id="name" name="user_name" placeholder="Enter your name" required>
+
+            <label for="email">Email Address *:</label>
+            <input type="email" id="email" name="user_email" placeholder="email@example.com" required>
+
+            <label for="message">Message *:</label>
+            <textarea id="message" name="user_message" placeholder="Write your message here..." required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 GammaTech. All rights reserved.</p>
+        <p>Contact: University st. N52, Tbilisi | 032 200 00 00 | Email: support@gammatech.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

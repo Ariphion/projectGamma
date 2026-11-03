@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GammaTech | Pricing & Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/GammaTechLogo.png">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="/">
+                    <img class="companyLogo" src="assets/GammaTechLogo.png" alt="">GammaTech</a>
+            </h1>
+            <nav class= "main-nav" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="pricing.html" class="active">Pricing</a></li>
+                </ul>
+            </nav>
+            <nav class="user-actions-nav" aria-label="User Actions">
+                <ul>
+                    <li><a class="icons" href="login.html"><img class="icons login" src="assets/avatar.png" alt="Login"></a></li>
+                    <li><a class="icons" href="contact.html"><img class="icons contact" src="assets/contact-us.png" alt="Contact"></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pricing-page">
+        <section class="pricing-hero">
+            <div class="pricing-hero-text">
+                <h2>Transparent, Flat-Rate Pricing</h2>
+                <p class="lead-text">No hidden fees. Choose a service tier or request a custom diagnostic estimate below.</p>
+            </div>
+        </section>
+
+        <section id="pricing-tiers" class="pricing-tiers container">
+            <div class="grid-layout">
+                
+                <article class="card pricing-card">
+                    <div class="price-header">
+                        <h4>Standard Diagnostic</h4>
+                        <div class="price-amount">₾50<span> / absolute fix</span></div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>Complete hardware inspection</li>
+                        <li>Thermal performance monitoring</li>
+                        <li>Malware quick-scan</li>
+                        <li>Detailed repair estimate</li>
+                    </ul>
+                    <a href="#booking-form-section" class="btn plan-btn">Select Plan</a>
+                </article>
+
+                <article class="card pricing-card featured-plan">
+                    <div class="price-header">
+                        <h4>Full System Tune-up</h4>
+                        <div class="price-amount">₾120<span> / complete job</span></div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><strong>Everything in Diagnostic</strong></li>
+                        <li>OS re-installation & cleanup</li>
+                        <li>Deep virus & malware removal</li>
+                        <li>Registry and startup tuning</li>
+                    </ul>
+                    <a href="#booking-form-section" class="btn plan-btn">Select Plan</a>
+                </article>
+
+                <article class="card pricing-card">
+                    <div class="price-header">
+                        <h4>Advanced Lab Repair</h4>
+                        <div class="price-amount">₾250<span> + parts cost</span></div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>Motherboard micro-soldering</li>
+                        <li>Liquid damage treatment</li>
+                        <li>Cleanroom data recovery</li>
+                        <li>30-day operation warranty</li>
+                    </ul>
+                    <a href="#booking-form-section" class="btn plan-btn">Select Plan</a>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="faq-section container">
+            <h3>Frequently Asked Pricing Questions</h3>
+            <div class="accordion-container">
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" type="button">What happens if my computer cannot be fixed?</button>
+                    <div class="accordion-content">
+                        <p>We strictly enforce a "No Fix, No Fee" policy. If our laboratory diagnostics show that a component is unrepairable, you pay absolutely nothing for the repair attempt.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" type="button">How long do standard laboratory repairs take?</button>
+                    <div class="accordion-content">
+                        <p>Standard OS adjustments and basic diagnostic tasks are completed within 24 to 48 hours. Complex board micro-soldering or data recovery can take 3 to 5 business days depending on part availability.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="booking-form-section" class="form-section container">
+            <h3>Book Your Service Appointment</h3>
+            <p>Fill out the service ticket below to instantly register your system in our diagnostic queue.</p>
+            
+            <form action="#" method="POST" class="styled-form">
+                <div class="form-group">
+                    <label for="clientName">Full Name *</label>
+                    <input type="text" id="clientName" name="clientName" placeholder="Enter your full name..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="clientEmail">Email Address *</label>
+                    <input type="email" id="clientEmail" name="clientEmail" placeholder="name@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="deviceType">Device Type *</label>
+                    <select id="deviceType" name="deviceType" required>
+                        <option value="" disabled selected>Select your system layout...</option>
+                        <option value="desktop">Custom Desktop PC</option>
+                        <option value="laptop">Laptop / Notebook</option>
+                        <option value="mac">Apple Mac System</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="issueDescription">Describe the Technical Issue</label>
+                    <textarea id="issueDescription" name="issueDescription" placeholder="Provide details (e.g., blue screen codes, liquid damage, slow loading speeds)..." rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="btn form-submit-btn">Submit Service Ticket</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 GammaTech. All rights reserved.</p>
+        <p>Contact: University st. N52, Tbilisi | 032 200 00 00 | Email: support@gammatech.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GammaTech | Login & Register</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/GammaTechLogo.png">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="/">
+                    <img class="companyLogo" src="assets/GammaTechLogo.png" alt="">GammaTech</a>
+            </h1>
+            <nav class= "main-nav" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+            </nav>
+            <nav class="user-actions-nav" aria-label="User Actions">
+                <ul>
+                    <li><a class="icons active" href="login.html"><img class="icons login" src="assets/avatar.png" alt="Login"></a></li>
+                    <li><a class="icons" href="contact.html"><img class="icons contact" src="assets/contact-us.png" alt="Contact"></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="auth-section">
+            <div class="auth-grid">
+                
+                <article class="auth-box">
+                    <h2>Login</h2>
+                    <form action="#" method="POST" class="auth-form">
+                        <label for="login-user">Email address *</label>
+                        <input type="email" id="login-user" name="email" placeholder="Email" required>
+                        
+                        <label for="login-pass">Password *</label>
+                        <input type="password" id="login-pass" name="password" placeholder="Password" required>
+                        
+                        <div class="form-footer">
+                            <button type="submit" class="btn-primary">Log in</button>
+                            <label class="remember-me">
+                                <input type="checkbox" name="remember"> Remember me
+                            </label>
+                        </div>
+                        <button type="button" class="lost-password">Lost your password?</button>
+                    </form>
+                </article>
+
+                <article class="auth-box">
+                    <h2>Register</h2>
+                    <form action="#" method="POST" class="auth-form">
+                        <fieldset>
+                            <legend>Registration details</legend>
+
+                            <label for="reg-email">Email address *</label>
+                            <input type="email" id="reg-email" name="reg_email" placeholder="Email" required>
+                            
+                            <p class="form-info">
+                                A password will be sent to your email address.
+                            </p>
+                            
+                            <p class="form-info">
+                                Your personal data will be used to support your experience throughout this website.
+                            </p>
+
+                            <label class="agree-rules">
+                                <input type="checkbox" name="agree_rules" required>
+                                I agree to GammaTech rules and service terms *
+                            </label>
+                        </fieldset>
+
+                        <button type="submit" class="btn-primary">Register</button>
+                    </form>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 GammaTech. All rights reserved.</p>
+        <p>Contact: University st. N52, Tbilisi | 032 200 00 00 | Email: support@gammatech.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
