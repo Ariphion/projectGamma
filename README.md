@@ -37,3 +37,15 @@ The application is successfully hosted and live on Vercel.
   ![Live Application on Vercel](project_screenshots/runningvercel.png)
 
 ---
+
+# Project Gamma - DevOps Academic Project
+
+## 📊 System Status Dashboard
+| Metric / Check | Visual Status | Type | Source |
+| :--- | :---: | :---: | :--- |
+| **CI/CD Pipeline** | ![CI/CD Pipeline Status](https://github.com/Ariphion/projectGamma/actions/workflows/ci-cd.yml/badge.svg) | Automated | GitHub Actions |
+| **Unit Tests Suite** | ![Tests Passed](https://img.shields.io/badge/Unit%20Tests-PASSED-brightgreen) | Automated | `test_site.js` |
+| **Health Monitor** | ![System Health](https://img.shields.io/badge/System%20Health-OK-success) | Script | `health_check.py` |
+| **Production Hosting** | ![Deployment](https://img.shields.io/badge/Vercel-LIVE-blue) | Cloud | Vercel Deployment |
+
+---
