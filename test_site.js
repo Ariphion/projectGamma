@@ -1,5 +1,5 @@
 const fs = require('fs');
-const path = path || require('path');
+const path = require('path');
 
 const requiredFiles = ['index.html', 'about.html', 'contact.html', 'style.css'];
 
