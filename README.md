@@ -18,6 +18,7 @@ Our automated workflow triggers on every push to the `main` and `dev` branches, 
 
 ### Pipeline Status (GitHub Actions)
 ![GitHub Actions CI/CD Pipeline](project_screenshots/githubActions.png)
+![Detailed CI/CD Pipeline](project_screenshots/runningResultCICD.png)
 
 ---
 
