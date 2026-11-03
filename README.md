@@ -3,9 +3,9 @@
 A responsive static website deployed via an automated CI/CD pipeline with continuous integration testing, health monitoring, and cloud hosting.
 
 ## 🚀 Project Overview
-* **Version Control**: GitHub (`main` & `dev` branching strategy)[cite: 2]
-* **CI/CD Automation**: GitHub Actions (3-stage pipeline: Build, Test, Deploy)[cite: 2]
-* **Hosting Platform**: Vercel (Path B)[cite: 2]
+* **Version Control**: GitHub (`main` & `dev` branching strategy)
+* **CI/CD Automation**: GitHub Actions (3-stage pipeline: Build, Test, Deploy)
+* **Hosting Platform**: Vercel (Path B)
 * **Monitoring**: Python health-check script (`health_check.py`)
 
 ---
@@ -37,8 +37,6 @@ The application is successfully hosted and live on Vercel.
   ![Live Application on Vercel](project_screenshots/runningvercel.png)
 
 ---
-
-# Project Gamma - DevOps Academic Project
 
 ## 📊 System Status Dashboard
 | Metric / Check | Visual Status | Type | Source |

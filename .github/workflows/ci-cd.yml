@@ -3,28 +3,95 @@ name: CI/CD Pipeline
 on:
   push:
     branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+env:
+  SITE_URL: https://projectgamma-gamma.vercel.app
 
 jobs:
-  build-and-test:
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-
+        uses: actions/checkout@v4
+      
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
-
-      - name: Build Stage (Verify asset structure)
+          node-version: '20'
+          
+      - name: Prepare build output (dist/)
         run: |
-          echo "Building static website assets..."
-          ls -la
+          mkdir -p dist
+          cp -r *.html style.css script.js assets dist/
+          echo "Build output:" && ls -la dist
+          
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-dist
+          path: dist
 
-      - name: Test Stage (Run unit tests)
-        run: |
-          node test_site.js
+  test:
+    name: Test
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Run unit tests
+        run: node --test test_site.js
 
-      - name: Deploy Stage (Placeholder for Vercel integration)
+  deploy:
+    name: Deploy
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+        
+      - name: Deploy to Vercel (production)
+        run: vercel deploy --prod --yes --token="$VERCEL_TOKEN"
+        
+      - name: Health check deployed site
+        id: health
+        run: python health_check.py "$SITE_URL"
+        
+      - name: Roll back on failed health check
+        if: failure() && steps.health.outcome == 'failure'
         run: |
-          echo "Deployment stage reached successfully!"
+          echo "Health check failed — rolling back to previous production deployment"
+          vercel rollback --yes --token="$VERCEL_TOKEN"
+          
+      - name: Upload health log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: health-log
+          path: health_check.log
