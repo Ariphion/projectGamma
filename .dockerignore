@@ -1,0 +1,23 @@
+# Git & CI/CD workflows
+.git
+.gitignore
+.github
+
+# Documentation & project screenshots (keeps them off the live web server)
+README.md
+project_screenshots/
+
+# Tests & local logs
+test_site.js
+health_check.log
+*.log
+
+# Docker files
+docker-compose.yml
+.dockerignore
+
+# Python cache & OS clutter
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
